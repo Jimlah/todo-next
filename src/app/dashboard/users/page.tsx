@@ -7,7 +7,7 @@ export default function Page() {
             {
                 Array(10).fill(0).map((_, i) => (
                     <div key={i}>
-                        <Link href={`/dashboard/users/${i}`}>User {i}</Link>
+                        <Link className="underline" href={`/dashboard/users/${i}`}>User {i}</Link>
                     </div>
                 ))
             }

@@ -9,17 +9,17 @@ export default function Layout({children, user, post}: { children: React.ReactNo
             <div>
                 <ul>
                     <li>
-                        <Link href="/dashboard">
+                        <Link className="underline" href="/dashboard">
                             Dashboard
                         </Link>
                     </li>
                     <li>
-                        <Link href="/dashboard/settings">
+                        <Link className="underline" href="/dashboard/settings">
                             Settings
                         </Link>
                     </li>
                     <li>
-                        <Link href="/dashboard/users">
+                        <Link className="underline" href="/dashboard/users">
                             Users
                         </Link>
                     </li>
