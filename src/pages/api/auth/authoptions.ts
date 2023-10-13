@@ -19,7 +19,7 @@ const options: AuthOptions = {
                 // Add logic here to look up the user from the credentials supplied
                 const user = { id: "1", name: "J Smith", email: "jsmith@example.com" }
 
-                compare(credentials.password, user.password);
+                // compare(credentials.password, user.password);
 
                 if (user) {
                     // Any object returned will be saved in `user` property of the JWT
@@ -34,14 +34,14 @@ const options: AuthOptions = {
     ],
     pages: {
         signIn: "/signin",
+        newUser: "/dashboard",
     },
     session:{
         strategy: "jwt",
     },
     callbacks: {
         async signIn(prop) {
-            console.log(prop.user);
-            return true
+            return prop;
         },
     }
 }

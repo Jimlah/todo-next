@@ -1,9 +1,21 @@
 'use client';
 
-import React from "react";
+import React, {useEffect} from "react";
 import Link from "next/link";
+import {useSession} from "next-auth/react";
+import {useRouter} from "next/navigation";
 
 export default function Layout({children, user, post}: { children: React.ReactNode, user: React.ReactNode, post: React.ReactNode }) {
+
+    const router = useRouter();
+    const {status} = useSession();
+
+    useEffect(() => {
+        if (status === "unauthenticated") {
+            router.push("/auth/sign-in");
+        }
+    }, [status, router]);
+
     return (
         <div className="flex flex-col h-screen">
             <div>

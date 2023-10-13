@@ -12,6 +12,5 @@ const handler = NextAuth(options);
 
 export default async function auth(req: NextApiRequest, res: NextApiResponse) {
 
-
     return await NextAuth(req, res, options);
 }

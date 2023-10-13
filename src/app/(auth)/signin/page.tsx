@@ -1,17 +1,13 @@
 "use client";
 
-import React from "react";
-import {signIn} from "next-auth/react";
+import React, {useEffect} from "react";
+import {signIn, useSession} from "next-auth/react";
 import {useRouter} from "next/navigation";
 
 export default function Page() {
 
-    const router = useRouter();
-
-    const handleSignIn = () => {
-        signIn('credentials', {redirect: false});
-
-        router.push('/dashboard');
+    const handleSignIn = async () => {
+       await signIn('credentials', {redirect: false, email: 'abdullahij@gmail.com', password: 'password'});
     };
 
     return (
